@@ -9,9 +9,10 @@ export default function OrdersPage({ status }) {
   const [total, setTotal] = useState(0);
 
   const token = localStorage.getItem('token');
+ 
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/orders`, {
+    axios.get('https://order-tracking-app-asw1.onrender.com/api/orders', {
       headers: { Authorization: `Bearer ${token}` },
       params: { status, page }
     }).then(res => {

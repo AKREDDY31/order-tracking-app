@@ -6,7 +6,8 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    axios.post('http://localhost:5000/api/login', { username, password })
+    axios.post('https://order-tracking-app-asw1.onrender.com/api/login', { username, password })
+
       .then(res => {
         localStorage.setItem('token', res.data.token);
         window.location.href = '/o/success';

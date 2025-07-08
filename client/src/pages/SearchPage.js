@@ -13,9 +13,10 @@ export default function SearchPage() {
 
   const token = localStorage.getItem('token');
 
+
   const search = (newPage = 1) => {
     setPage(newPage);
-    axios.get('http://localhost:5000/api/orders/search', {
+   axios.get('https://order-tracking-app-asw1.onrender.com/api/orders/search', {
       headers: { Authorization: `Bearer ${token}` },
       params: { customer_id: customerId, product_id: productId, status, page: newPage }
     }).then(res => {
