@@ -8,7 +8,7 @@ function App() {
   const token = localStorage.getItem('token');
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/o/success" element={token ? <OrdersPage status="Delivered" /> : <Navigate to="/" />} />
